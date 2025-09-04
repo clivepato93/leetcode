@@ -1,19 +1,15 @@
-// https://leetcode.com/problems/palindrome-number/
+// https://leetcode.com/problems/valid-palindrome/
 // Topics 
-// Math
-var isPalindrome = function(x) {
-    const ref = x
-    let num = 0
-    if(x<0) return false
-    while(x>0){
-        const mod = x%10
-        num*=10
-        num+=mod
-        x/=10
-        x= Math.floor(x)
+// Two Pointers
+//  String
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+var isPalindrome = function(s) {
+    const letters = s.replace(/[A-Z]/g,e=>e.toLowerCase()).replace(/[^a-z0-9]/g,'')
+    for(let i =0;i<Math.floor(letters.length/2);i++){
+        if(letters[i]!=letters[letters.length-(i+1)]) return false
     }
-    return num==ref
+    return true
 };
-
-// console.log(isPalindrome(121),true)
-console.log(isPalindrome(10),false)

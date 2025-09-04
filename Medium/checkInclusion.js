@@ -19,7 +19,6 @@ var checkInclusion = function (s1, s2) {
   }
   for (const element of compare) {
     if(compare[element]==letter[element.charCodeAt(0)-97]){
-        // continue to loop then use a boolean to determine next steps
     }
   }
   for (let i = 1; i <= s2.length-s1.length; i++) {
