@@ -26,6 +26,6 @@ var findMaxAverage = function(nums, k) {
   }  
   return average
 };
-console.log(findMaxAverage([5],1),5)
+// console.log(findMaxAverage([5],1),5)
 // console.log(findMaxAverage([1,12,-5,-6,50,3],4),12.75)
 // console.log(findMaxAverage([-1],1),1)

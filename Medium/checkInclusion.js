@@ -6,29 +6,65 @@
  * @return {boolean}
  */
 var checkInclusion = function (s1, s2) {
-  const curr = 0;
-  const letter = [];
-  const compare = {}
-  for (let index = 0; index < 26; index++) {
-    letter.push( 0);
-    
-  }
-  for (let index = 0; index < s1.length; index++) {
-    letter[s1[index].charCodeAt(0) - 97]++;
-    compare[s1[index]]?compare[s1[index]]+=1:compare[s1[index]]=1
-  }
-  for (const element of compare) {
-    if(compare[element]==letter[element.charCodeAt(0)-97]){
-    }
-  }
-  for (let i = 1; i <= s2.length-s1.length; i++) {
-    
-  
-    
-   }
-   
+	let check = true;
+	const letters = {};
+	const compare = {};
 
-  
+	for (let i = 0; i < s1.length; i++) {
+		if (letters[s1[i]]) {
+			letters[s1[i]]++;
+		}
+		if (compare[s2[i]]) {
+			compare[s2[i]]++;
+		} 
+    if(!compare[s2[i]]) {
+			compare[s2[i]] = 1;
+			
+		}
+     if(!letters[s1[i]]) {
+			letters[s1[i]] = 1;
+		}
+	}
+
+	for (const key in letters) {
+		if (compare[key] && compare[key] == letters[key]) {
+			continue;
+		} else {
+			check = false;
+			break;
+		}
+	}
+	if (check) return true;
+
+	for (let i = 1; i <= s2.length - s1.length; i++) {
+		compare[s2[i - 1]]--;
+		if (compare[s2[i - 1]] == 0) {
+			delete compare[s2[i - 1]];
+		}
+		if (!compare[s2[i + (s1.length - 1)]]) {
+			compare[s2[i + (s1.length - 1)]] = 1;
+		} else {
+			compare[s2[i + (s1.length - 1)]]++;
+		}
+		let secondCheck = true;
+		for (const key in letters) {
+			if (compare[key] && compare[key] == letters[key]) {
+				continue;
+			} else {
+				secondCheck = !secondCheck;
+				break;
+			}
+		}
+
+		if (secondCheck) return true;
+	}
+	return false;
 };
+console.log(checkInclusion("hello", "ooolleoooleh"), false);
+// console.log(checkInclusion('ab','ab'),true)
+// console.log(checkInclusion('adc',"dcda"
 
-console.log(checkInclusion("ab", "eidbaooo"), true);
+// ),true)
+// console.log(checkInclusion('ab',"eidboaoo"),false)
+// console.log(checkInclusion('a','ab'),true)
+// console.log(checkInclusion("ab", "eidbaooo"), true);
