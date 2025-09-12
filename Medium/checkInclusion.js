@@ -1,5 +1,10 @@
 // https://leetcode.com/problems/permutation-in-string/
 
+// Topics 
+// Hash Table
+// Two Pointers 
+// String 
+// Sliding Window 
 /**
  * @param {string} s1
  * @param {string} s2

@@ -1,7 +1,7 @@
 // https://leetcode.com/problems/valid-palindrome/
 // Topics 
 // Two Pointers
-//  String
+// String
 /**
  * @param {string} s
  * @return {boolean}

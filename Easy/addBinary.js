@@ -60,9 +60,6 @@ var addBinary = function(a, b) {
     let bIndex = b.length-1
     let carry = 0
     while(a[aIndex]||b[bIndex]||carry){
-        // if(!(a[aIndex])&& !(b[bIndex]) && !carry){
-        //     loop = !loop
-        // }
         const num1 = +(a[aIndex])||0
         const num2 = +(b[bIndex])||0
         const sum =num1+num2+carry
@@ -84,13 +81,9 @@ var addBinary = function(a, b) {
     let carry = 0
     let res = null;
     while(a[aIndex]||b[bIndex]||carry){
-        // if(!(a[aIndex])&& !(b[bIndex]) && !carry){
-        //     loop = !loop
-        // }
+    
         const num1 = (a[aIndex])?.charCodeAt(0) - 48||0
         const num2 = (b[bIndex])?.charCodeAt(0)- 48||0
-        // const sum =num1+num2+carry
-        // res= ((num1+num2+carry)%2)
         num= ((num1+num2+carry)%2) + num
         carry = Math.floor((num1+num2+carry)/2)
        

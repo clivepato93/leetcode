@@ -1,5 +1,8 @@
 // https://leetcode.com/problems/climbing-stairs/
-
+// Topics 
+// Math 
+// Dynamic Programming
+// Memoization
 var climbStairs = function(n,step=0,obj={val:0}) {
     // console.log(obj)
     // wrong
