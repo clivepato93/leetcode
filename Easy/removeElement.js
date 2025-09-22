@@ -50,7 +50,45 @@ let total= 0;
     return total
     }
 
-    
+    var removeElement = function (nums, val) {
+    let left = 0;
+let total= 0;
+    for (let i = 0; i < nums.length; i++) {
+        if(nums[i]!=val){
+            total++;
+        }
+        if(nums[i]!= val && nums[left]== val){
+            [nums[left], nums[i]] = [nums[i],nums[left]]
+           left++;
+     
+            
+           }
+           else if(nums[left]!= val) left++;
+        }
+
+    return total
+    }
+
+        var removeElement = function (nums, val) {
+    let left = 0;
+let total= 0;
+    for (let i = 0; i < nums.length; i++) {
+        if(nums[i]!=val){
+            total++;
+        }
+        if(nums[i]!= val && nums[left]== val){
+            [nums[left], nums[i]] = [nums[i],nums[left]]
+           left++;
+     
+            
+           }
+           else if(nums[left]!= val) left++;
+        }
+
+    return total
+    }
+
+// To do again
 
 
 
