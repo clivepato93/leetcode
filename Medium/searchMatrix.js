@@ -25,7 +25,7 @@ function searchMatrix(matrix, target) {
     }
   }
   let left = 0;
-if(matrix[rleft]!=undefined){
+if(rleft<matrix.length){
 
     while (left <= rowLen) {
         let mid = Math.floor(rowLen - (rowLen - left) / 2);

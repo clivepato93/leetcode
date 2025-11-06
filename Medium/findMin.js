@@ -7,27 +7,32 @@
  * @return {number}
  */
 
-var findMin = function(nums){
-    // if(nums.length==1) return nums[0]
-    // find the pivot
-    let left = 0;
-    let right = nums.length-1;
-    if(nums[left]<nums[right]) return nums[left]
-    while(left<right){
-        const mid = Math.floor((left+right)/2)
-        if(mid < nums.length - 1 && nums[mid]>nums[mid+1]){
-         return nums[mid+1];   
-        }
-        else if(nums[mid]> nums[right]){
-            left = mid+1
+// var findMin = function(nums){
+//     // if(nums.length==1) return nums[0]
+//     // find the pivot
+//     let left = 0;
+//     let right = nums.length-1;
+//     if(nums[left]<nums[right]) return nums[left]
+//     while(left<right){
+//         const mid = Math.floor((left+right)/2)
+//         if(mid < nums.length - 1 && nums[mid]>nums[mid+1]){
+//          return nums[mid+1];   
+//         }
+//         else if(nums[mid]> nums[right]){
+//             left = mid+1
             
-        }
-        else{
-            right = mid;
-        }
-    }
-    return nums[left]
-}   
+//         }
+//         else{
+//             right = mid;
+//         }
+//     }
+//     return nums[left]
+// }   
+
+var findMin = function(nums){
+    
+}
+
 
 console.log(findMin([1]),1)
 console.log(findMin([4,5,1,2,3]),1)
