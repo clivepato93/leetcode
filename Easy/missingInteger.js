@@ -8,23 +8,41 @@
  * @param {number[]} nums
  * @return {number}
  */
+// var missingInteger = function (nums) {
+
+// 	let prefixSum = nums[0];
+// 	const s = new Set();
+//     s.add(nums[0])
+//     let add = true;
+// 	for (let i = 1;i<nums.length; i++) {
+//         if( (nums[i - 1] == nums[i] - 1)==false){
+//             add = false;
+//         }
+
+//         if(add){
+//             prefixSum+=nums[i];
+//         }
+       
+//             s.add(nums[i])
+// 	}
+	
+// 	while (s.has(prefixSum)) {
+// 		prefixSum++;
+// 	}
+
+// 	return prefixSum;
+// };
+
 var missingInteger = function (nums) {
 
 	let prefixSum = nums[0];
-	const s = new Set();
-    s.add(nums[0])
-    let add = true;
-	for (let i = 1;i<nums.length; i++) {
-        if( (nums[i - 1] == nums[i] - 1)==false){
-            add = false;
-        }
+	const s = new Set(nums);
 
-        if(add){
-            prefixSum+=nums[i];
-        }
-       
-            s.add(nums[i])
-	}
+    let i =1;
+    while(i<nums.length &&nums[i]-nums[i-1]==1){
+        prefixSum+=nums[i]
+        i++;
+    }
 	
 	while (s.has(prefixSum)) {
 		prefixSum++;
