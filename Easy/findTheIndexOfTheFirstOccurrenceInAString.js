@@ -1,5 +1,7 @@
 // https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/
-
+// Two Pointers
+// String
+// String Matching
 // to complete.. 
 /**
  * @param {string} haystack
@@ -7,23 +9,29 @@
  * @return {number}
  */
 var strStr = function(haystack, needle) {
-    let len = 0;
+
     let needlePos =0;
     for(let i =0;i<haystack.length;i++){
-        if(needle[needlePos]== haystack[i]){
-            needlePos++;
-            len++;
-            if(len == needle.length) return i-(len-1) 
+        for (let j = i; j < haystack.length; j++) {
+            let match  = null;
+            if(needle[needlePos]== haystack[j]){
+                needlePos++;
+                match = true
+            }
+            if(needle[needlePos]==undefined){
+                return i
+            }
+            if(!match){
+                needlePos=0
+                break;
+            }
+            
         }
-        else{
-
-            needlePos==0?0:needlePos-2;
-            len--;
-        }
+        needlePos = 0;
     }
     return -1
 };
-
+console.log(strStr("aaa",'aaaa'))
 console.log(strStr("mississippi"
 ,"issip"
 ),4)
