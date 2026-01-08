@@ -1,5 +1,6 @@
 // https://leetcode.com/problems/valid-parentheses/
-
+// String
+// Stack
 /**
  * @param {string} s
  * @return {boolean}
